@@ -11,6 +11,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import java.util.Collection;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.swing.JLayeredPane;
@@ -443,7 +444,7 @@ public class SnapPanel extends JPanel
 				.map(a -> (SnapPanel)a)
 				.filter(a -> !this.isLinkedDown(a))
 				.filter(a -> !this.isLinkedUp(a))
-				.toList();
+				.collect(Collectors.toList());
 	}
 	
 	public boolean isLinkableBottom() {
